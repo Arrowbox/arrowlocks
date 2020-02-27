@@ -6,7 +6,19 @@
         - lolcat
         - figlet
         - direnv
+
 - name: Clone Prezto
   git:
     repo: 'https://github.com/sorin-ionescu/prezto.git'
-    dest: '/home/{{ ansible_user }}/.local/share/zprezto'
+    dest: '{{ xdg_data_home }}/zprezto'
+
+- name: Clone zplug
+  git:
+    repo: 'https://github.com/zplug/zplug'
+    dest: '{{ xdg_data_home }}/zplug'
+
+- name: Change shell to zsh
+  become: yes
+  user:
+    name: '{{ home_user }}'
+    shell: /usr/bin/zsh

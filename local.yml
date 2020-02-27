@@ -1,4 +1,8 @@
 - hosts: localhost
+  vars:
+    home_user: '{{ ansible_user }}'
+    xdg_data_home: '/home/{{ ansible_user }}/.local/share'
+    xdg_config_home: '/home/{{ ansible_user }}/.config'
   roles:
     - common
     - yadm
