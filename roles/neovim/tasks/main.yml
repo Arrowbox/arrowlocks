@@ -1,0 +1,12 @@
+- name: Install neovim
+  become: yes
+  apt:
+    name:
+        - neovim
+- name: Create neovim config directory
+  file: path=/home/{{ ansible_user }}/.config/nvim/autoload state=directory
+- name: Bootstrap vim.plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: /home/{{ ansible_user }}/.config/nvim/autoload/
+
