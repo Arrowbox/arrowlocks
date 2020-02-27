@@ -2,4 +2,5 @@
   become: true
   roles:
     - common
+    - zsh
     - neovim

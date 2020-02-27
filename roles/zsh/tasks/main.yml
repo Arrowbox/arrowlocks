@@ -1,0 +1,9 @@
+- name: Install zsh packages
+  become: yes
+  apt:
+    name:
+        - zsh
+- name: Clone Prezto
+  git:
+    repo: 'https://github.com/sorin-ionescu/prezto.git'
+    dest: '/home/{{ ansible_user }}/.local/share/zprezto'
