@@ -3,6 +3,9 @@
   apt:
     name:
         - zsh
+        - lolcat
+        - figlet
+        - direnv
 - name: Clone Prezto
   git:
     repo: 'https://github.com/sorin-ionescu/prezto.git'

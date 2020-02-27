@@ -1,0 +1,9 @@
+- name: Install yadm
+  become: yes
+  apt:
+    name:
+        - yadm
+- name: Clone yadm
+  command: yadm clone https://github.com/Arrowbox/arrowdots.git
+  args:
+    creates: /home/{{ ansible_user }}/.yadm/repo.git
