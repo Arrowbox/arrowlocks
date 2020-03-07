@@ -7,15 +7,9 @@
 - name: Create fonts directory
   file: path={{ xdg_data_home }}/fonts state=directory
 
-  #- name: Download FontAwesome Release
-  #get_url:
-      #url: https://github.com/FortAwesome/Font-Awesome/releases/download/5.12.1/fontawesome-free-5.12.1-desktop.zip
-    #dest: '{{ xdg_data_home }}/fonts/fontawesome.zip'
-
 - name: Fetch FontAwesome
   unarchive:
     src: https://github.com/FortAwesome/Font-Awesome/releases/download/5.12.1/fontawesome-free-5.12.1-desktop.zip
-    #src: '{{ xdg_data_home }}/fonts/fontawesome.zip'
     dest: '{{ xdg_data_home }}/fonts/'
     remote_src: yes
 
