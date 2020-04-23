@@ -4,3 +4,5 @@
     name:
         - i3
         - git
+        - scdaemon
+        - pcscd
